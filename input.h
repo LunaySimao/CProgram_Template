@@ -73,3 +73,28 @@ void readString(char *charArr, unsigned int maxChars);
  */
 char** splitString(char *string, int nTokens, const char *delim);
 
+// Specification
+
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param arrSize 
+ */
+void bubbleSort(int arr[], int arrSize);
+
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param arrSize 
+ */
+void selectionSort(int arr[], int arrSize);
+
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param arrSize 
+ */
+void printArray(int arr[], int arrSize);

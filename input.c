@@ -114,3 +114,53 @@ static void removeNewline(char *s) {
 	}
 }
 
+ /***************************************************************************************************************************/
+// Implementation
+
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param arrSize 
+ */
+void bubbleSort(int arr[], int arrSize){
+	for (int i = 0; i < arrSize; i++){
+		bool sorted = true; //Sweep Control Flag. Tells the function to stop sorting the array if it's already sorted
+		for (int j = 0; j < arrSize - i - 1; j++){
+			if (arr[j] > arr[j+1]){
+				sorted = false;
+				int aux = arr[j];
+				arr[j] = arr[j+1];
+				arr[j+1] = aux;
+			}		
+		}
+		if (sorted) break;				
+	}
+}
+
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param arrSize 
+ */
+void selectionSort(int arr[], int arrSize){
+	for (int i = 0; i < arrSize; i++){
+		int indexMin = i;
+		for (int j = i; j < arrSize; j++){
+			if (arr[j] < arr[indexMin]){
+				indexMin = j;
+			}			
+		}
+		int aux = arr[i];
+		arr[i] = arr[indexMin];
+		arr[indexMin] = aux;
+	}	
+}
+
+void printArray(int arr[], int arrSize){
+	for (int i = 0; i < arrSize; i++){
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
