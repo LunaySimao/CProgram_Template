@@ -117,12 +117,7 @@ static void removeNewline(char *s) {
  /***************************************************************************************************************************/
 // Implementation
 
-/**
- * @brief 
- * 
- * @param arr 
- * @param arrSize 
- */
+
 void bubbleSort(int arr[], int arrSize){
 	for (int i = 0; i < arrSize; i++){
 		bool sorted = true; //Sweep Control Flag. Tells the function to stop sorting the array if it's already sorted
@@ -138,12 +133,7 @@ void bubbleSort(int arr[], int arrSize){
 	}
 }
 
-/**
- * @brief 
- * 
- * @param arr 
- * @param arrSize 
- */
+
 void selectionSort(int arr[], int arrSize){
 	for (int i = 0; i < arrSize; i++){
 		int indexMin = i;
