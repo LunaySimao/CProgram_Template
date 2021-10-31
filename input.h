@@ -71,7 +71,7 @@ void readString(char *charArr, unsigned int maxChars);
  * @param delim [in] delimiter, usually a single character
  * @return char** pointer array (of size nFields) to string "tokens".
  */
-char** splitString(char *string, int nTokens, const char *delim);
+char **splitString(char *string, int nTokens, const char *delim);
 
 // Specification
 
@@ -98,3 +98,18 @@ void selectionSort(int arr[], int arrSize);
  * @param arrSize 
  */
 void printArray(int arr[], int arrSize);
+
+/**
+ * @brief 
+ * 
+ * @param length 
+ * @return int* 
+ */
+int *arrayInit(int length);
+
+/**
+ * @brief 
+ * 
+ * @param v 
+ */
+void arrayFree(int *v);

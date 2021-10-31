@@ -1,64 +1,53 @@
-#include <stdio.h> 
+#include <stdio.h>
 #include <stdlib.h>
 #include "input.h"
 
-//Pseudocodigo -> Linguagem C
-//Protótipos
+int main()
+{
+    int *arr = NULL;
 
+    int len = 0;
+    printf("Array len? \n");
+    readInteger(&len);
 
-int main() {
-    int v[] = {6, 5, 3, 1, 8, 7, 2, 4};
-    int arrSize = 8;
-    printArray(v, arrSize);
+    //1.
+    //arr = (int *)malloc(len * sizeof(int));
+    //5.
+    //arr = (int *)calloc(len, sizeof(int));
 
-    printf("Quadratic Ordering Algorithms\n\n");
-    //Bubble Sort - crescente
+    //9.
+    arr = arrayInit(len);
+    if (arr == NULL)
+        return EXIT_FAILURE; //Boa prática
 
-    //Selection Sort - decrescente
+    //2.
+    printf("arr addr = %p \n", arr);
+    printArray(arr, len);
 
-    printf("Bubble sort\n");
-    bubbleSort(v, arrSize);
-    printArray(v, arrSize);
+    //6.
+    //for (int i = 0; i < len; i++)
+    //{
+    //    arr[i] = (i + 1);
+    //}
+    //printArray(arr, len);
 
+    //7.
+    int *newArray = (int *)realloc(arr, len * 2 * sizeof(int));
+    if (newArray != NULL)
+    {
+        arr = newArray;
+        len *= 2;
+    }
+    for (int i = len / 2; i < len; i++)
+    {
+        arr[i] = (i + 1);
+    }
 
-    printf("Selection sort\n");
-    selectionSort(v, arrSize);
-    printArray(v, arrSize);
+    printArray(arr, len);
 
+    //4.
+    //free(arr);
+    //9.
+    arrayFree(arr);
     return EXIT_SUCCESS;
 }
-
-/*
-Bubble sort em pseudo-código:
-
-Algorithm bubbleSort
-input: arr - array of integers
-arrSize - natural number
-output: (arr is sorted increasingly)
-BEGIN
-FOR i <- 0 TO arrSize-1 DO
-FOR j <- 0 TO arrSize-i-2 DO
-IF arr[j] > arr[j+1] THEN
-SWAP arr[j], arr[j+1] trocar valores 
-END IF
-END FOR
-END FOR
-END
-*/
-
-/*
-Selection sort em pseudo-código
-Algorithm bubbleSort
-input: arr - array of integers
-arrSize - natural number
-output: (arr is sorted increasingly)
-BEGIN
-FOR i <- 0 TO arrSize-1 DO
-FOR j <- 0 TO arrSize-i-2 DO
-IF arr[j] > arr[j+1] THEN
-SWAP arr[j], arr[j+1] trocar valores 
-END IF
-END FOR
-END FOR
-END
-*/
